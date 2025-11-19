@@ -22,6 +22,10 @@ Updated versions. esling-config-mapbox is fixed due to unavailability of one dep
 
 Database
 
+### DDD
+
+domains: butterflies, users for scalability
+
 # 🦋 Butterfly critique
 
 Butterfly critique is an API designed for butterfly enthusiasts. So far, it's an [`express`](https://expressjs.com/)-based API that stores butterflies and users.

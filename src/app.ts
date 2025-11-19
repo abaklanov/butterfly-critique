@@ -1,10 +1,12 @@
 import Fastify from "fastify";
+import butterfliesApi from "./butterflies/api.ts";
 
 const fastify = Fastify({
   logger: true,
 });
 
 // Declare a route
+fastify.register(butterfliesApi);
 fastify.get("/api", function (request, reply) {
   reply.send({ hello: "world" });
 });
