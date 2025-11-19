@@ -1,8 +1,10 @@
 GET http://localhost:3000/api
 
 ### 
-
 GET http://localhost:3000/api/butterflies
+
+### 
+GET http://localhost:3000/api/butterflies/Hq4Rk_vOPMehRX2ar6LKX
 
 ### 
 GET http://localhost:3000/api/users

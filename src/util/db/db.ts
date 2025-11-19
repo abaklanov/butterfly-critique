@@ -11,11 +11,11 @@ const dbPlugin: Fastify.FastifyPluginAsync = async function DbDecorator(
     butterflies: [],
     users: [],
   };
+  // TODO: use env variable for file path
   const db = await JSONFilePreset("database/butterflies.db.json", defaultData);
   db.read();
 
   fastify.decorate("db", db);
-  console.log("Database decorator registered");
 };
 
 export default fp(dbPlugin);
