@@ -1,4 +1,14 @@
+# Disclaimer
+
+## Node version
+
+left as in package.json
+
 # Changes made
+
+## versioning
+
+Updated versions. esling-config-mapbox is fixed due to unavailability of one dependency
 
 ## Git
 
