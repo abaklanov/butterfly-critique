@@ -6,6 +6,12 @@ left as in package.json
 
 # Changes made
 
+## es modules
+
+usually it's a big consideration, but this is still on the initial stage, decision might be made
+
+## typescript
+
 ## versioning
 
 Updated versions. esling-config-mapbox is fixed due to unavailability of one dependency
