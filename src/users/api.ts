@@ -27,7 +27,7 @@ const usersApi: Fastify.FastifyPluginCallback = function (
     Body: {
       username: string;
     };
-  }>("/api/butterflies", function (request, reply) {
+  }>("/api/users", function (request, reply) {
     // TODO: validate request body and return proper response
     // TODO: avoid duplicate usernames
     // TODO: validate username rules (e.g. length, characters)
