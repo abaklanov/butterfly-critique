@@ -30,6 +30,7 @@ const usersApi: Fastify.FastifyPluginCallback = function (
   }>("/api/butterflies", function (request, reply) {
     // TODO: validate request body and return proper response
     // TODO: avoid duplicate usernames
+    // TODO: validate username rules (e.g. length, characters)
     const newUser = {
       id: nanoid(),
       ...request.body,
@@ -37,7 +38,7 @@ const usersApi: Fastify.FastifyPluginCallback = function (
     fastify.db.data.users.push(newUser);
 
     fastify.db.write();
-    reply.status(201).send({ butterfly: newUser });
+    reply.status(201).send({ user: newUser });
   });
 
   done();

@@ -32,6 +32,7 @@ const butterfliesApi: Fastify.FastifyPluginCallback = function (
     };
   }>("/api/butterflies", function (request, reply) {
     // TODO: validate request body and return proper response
+    // TODO: validate data (e.g. non-empty strings, length limits, valid URL for article)
     const newButterfly = {
       id: nanoid(),
       ...request.body,
