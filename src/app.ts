@@ -1,5 +1,6 @@
 import Fastify from "fastify";
 import butterfliesApi from "./butterflies/api.ts";
+import usersApi from "./users/api.ts";
 
 const fastify = Fastify({
   logger: true,
@@ -7,9 +8,7 @@ const fastify = Fastify({
 
 // Declare a route
 fastify.register(butterfliesApi);
-fastify.get("/api", function (request, reply) {
-  reply.send({ hello: "world" });
-});
+fastify.register(usersApi);
 
 // Run the server!
 fastify.listen({ port: 3000 }, function (err, address) {
