@@ -26,6 +26,14 @@ Database
 
 domains: butterflies, users for scalability
 
+### Framework selection
+
+Express.js is substituted with Fastify. There were a couple of concerns that Fastify might address better than Express. Apart from Fastify being faster, the biggest one is scalability, which in this case is achieved with breaking the app down into domains. Fastify allows for plugins which helps to abstract components from each other, making them as independent as possible.
+
+Since scalability was the main goal for this project, Fastify is considered more suitable. It's mature enough to use in a serious project, it has typescript support, reasonable sized community and amount of plugins available.
+
+In real-life project of course we have to take the team's knowledge into consideration, i.e. how skillful team members are with aforementioned frameworks, what's the requirements for project and so on. I considered these inapplicable in this case, hence the Fastify choice over Express.
+
 ### Potential improvements further
 
 GraphQL
