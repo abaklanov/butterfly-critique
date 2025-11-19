@@ -2,14 +2,11 @@ import Fastify from "fastify";
 import butterfliesApi from "./butterflies/api.ts";
 import usersApi from "./users/api.ts";
 import db from "./util/db/db.ts";
+import type { dbSchema } from "../database/schema";
 
 declare module "fastify" {
   interface FastifyInstance {
-    // TODO: re-think default schema type and store it somewhere
-    db: import("lowdb").Low<{
-      butterflies: Array<{ id: string; name: string }>;
-      users: Array<{ id: string; username: string }>;
-    }>;
+    db: import("lowdb").Low<dbSchema>;
   }
 }
 
