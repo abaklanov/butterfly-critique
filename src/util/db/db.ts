@@ -1,21 +1,25 @@
 import fp from "fastify-plugin";
 import * as Fastify from "fastify";
-import { JSONFilePreset } from "lowdb/node";
+import { JSONPreset } from "lowdb/node";
 import type { dbSchema } from "../../../database/schema";
 
-const dbPlugin: Fastify.FastifyPluginAsync = async function DbDecorator(
-  fastify,
-  options
-) {
-  const defaultData: dbSchema = {
-    butterflies: [],
-    users: [],
-  };
-  // TODO: use env variable for file path
-  const db = await JSONFilePreset("database/butterflies.db.json", defaultData);
-  db.read();
+interface dbPluginOptions {
+  filePath: string;
+}
 
-  fastify.decorate("db", db);
-};
+const dbPlugin: Fastify.FastifyPluginAsync<dbPluginOptions> =
+  async function DbDecorator(fastify, options) {
+    console.log(options);
+    const defaultData: dbSchema = {
+      butterflies: [],
+      users: [],
+    };
+    // TODO: use env variable for file path
+    const db = await JSONPreset(options.filePath, defaultData);
+    // TODO: possibly unnecessary
+    await db.read();
+
+    fastify.decorate("db", db);
+  };
 
 export default fp(dbPlugin);

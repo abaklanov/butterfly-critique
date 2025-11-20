@@ -7,6 +7,7 @@ const butterfliesApi: Fastify.FastifyPluginCallback = function (
   done
 ) {
   fastify.get("/api/butterflies", function (request, reply) {
+    console.log(fastify.db.data);
     const butterflies = fastify.db.data.butterflies || [];
     reply.send({ butterflies });
   });

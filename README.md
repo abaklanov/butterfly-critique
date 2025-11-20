@@ -26,6 +26,10 @@ Database
 
 domains: butterflies, users for scalability
 
+### ESM vs CommonJS
+
+Modern approach with ES6
+
 ### Framework selection
 
 Express.js is substituted with Fastify. There were a couple of concerns that Fastify might address better than Express. Apart from Fastify being faster, the biggest one is scalability, which in this case is achieved with breaking the app down into domains. Fastify allows for plugins which helps to abstract components from each other, making them as independent as possible.
@@ -34,9 +38,15 @@ Since scalability was the main goal for this project, Fastify is considered more
 
 In real-life project of course we have to take the team's knowledge into consideration, i.e. how skillful team members are with aforementioned frameworks, what's the requirements for project and so on. I considered these inapplicable in this case, hence the Fastify choice over Express.
 
+### Testing runner choice
+
+Vitest and esm based projects are friends. It works flawlessly with less configuration, faster as it handles tests in parallel and it mimics jest's syntax, so it's not that alien to somebody in the team who's not familiar with it.
+
+A bonus is that it has GUI, which helps to visualise testing process.
+
 ### Potential improvements further
 
-GraphQL
+GraphQL, PostgreSQL
 
 # 🦋 Butterfly critique
 
